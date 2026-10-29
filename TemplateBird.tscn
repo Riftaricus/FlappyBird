@@ -1,3 +1,19 @@
 [gd_scene format=3 uid="uid://ctr7noq2iochu"]
 
+[ext_resource type="Texture2D" uid="uid://dp4asei8oqdaj" path="res://assets/bird_wings_out.png" id="1_ko5ue"]
+[ext_resource type="Script" uid="uid://deufn15bwnhvj" path="res://BirdGravity.gd" id="2_ko5ue"]
+
 [node name="TemplateBird" type="Node2D" unique_id=146589811]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1411548342]
+
+[node name="Bird" type="Sprite2D" parent="." unique_id=1992971117]
+position = Vector2(-451, -0.9999999)
+scale = Vector2(0.6041667, 0.6041667)
+texture = ExtResource("1_ko5ue")
+script = ExtResource("2_ko5ue")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="Bird" unique_id=23184791]
+rect = Rect2(-54.620667, -33.10345, 81.103455, 72.82759)
+
+[connection signal="screen_exited" from="Bird/VisibleOnScreenEnabler2D" to="Bird" method="_on_visible_on_screen_enabler_2d_screen_exited"]
