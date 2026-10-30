@@ -27,8 +27,3 @@ func flap() -> void:
 	texture = TEX_FLAP;
 	await get_tree().create_timer(FLAP_TIME).timeout;
 	texture = TEX_IDLE;
-	
-
-
-func _on_visible_on_screen_enabler_2d_screen_exited() -> void:
-	print("THE BIRD HAS EXITED THE SCREEN AAAAAAAAAAA");

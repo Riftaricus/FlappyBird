@@ -1,7 +1,12 @@
 [gd_scene format=3 uid="uid://ctr7noq2iochu"]
 
-[ext_resource type="Texture2D" uid="uid://dp4asei8oqdaj" path="res://assets/bird_wings_out.png" id="1_ko5ue"]
+[ext_resource type="Texture2D" uid="uid://nqaxqm2c78dc" path="res://assets/bird_wings_in.png" id="1_ko5ue"]
 [ext_resource type="Script" uid="uid://deufn15bwnhvj" path="res://BirdGravity.gd" id="2_ko5ue"]
+[ext_resource type="Script" uid="uid://dr13ei4xj38k4" path="res://BirdDeath.gd" id="3_pwssr"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_t0u1a"]
+normal = Vector2(0, 1)
+distance = 1.0
 
 [node name="TemplateBird" type="Node2D" unique_id=146589811]
 
@@ -15,5 +20,10 @@ script = ExtResource("2_ko5ue")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="Bird" unique_id=23184791]
 rect = Rect2(-54.620667, -33.10345, 81.103455, 72.82759)
+script = ExtResource("3_pwssr")
 
-[connection signal="screen_exited" from="Bird/VisibleOnScreenEnabler2D" to="Bird" method="_on_visible_on_screen_enabler_2d_screen_exited"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1243418763]
+position = Vector2(1, -325)
+shape = SubResource("WorldBoundaryShape2D_t0u1a")
+
+[connection signal="screen_exited" from="Bird/VisibleOnScreenEnabler2D" to="Bird/VisibleOnScreenEnabler2D" method="_on_screen_exited"]
