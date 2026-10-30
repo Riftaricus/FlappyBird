@@ -1,19 +1,148 @@
 [gd_scene format=3 uid="uid://ctr7noq2iochu"]
 
-[ext_resource type="Texture2D" uid="uid://dp4asei8oqdaj" path="res://assets/bird_wings_out.png" id="1_ko5ue"]
+[ext_resource type="Script" uid="uid://ihmiik3yaavq" path="res://CameraFx.gd" id="1_ancck"]
+[ext_resource type="Texture2D" uid="uid://b6nd5f3igxj2v" path="res://assets/bg_far_mountains.png" id="1_pi3y5"]
+[ext_resource type="Script" uid="uid://jcf2o2t22ia0" path="res://HudManager.gd" id="1_y6t6f"]
 [ext_resource type="Script" uid="uid://deufn15bwnhvj" path="res://BirdGravity.gd" id="2_ko5ue"]
+[ext_resource type="Texture2D" uid="uid://jwbmnisswtaj" path="res://assets/bg_far_sky.png" id="2_mny0g"]
+[ext_resource type="Texture2D" uid="uid://tmvqapr3kqti" path="res://assets/ground.png" id="3_pi3y5"]
+[ext_resource type="Texture2D" uid="uid://b21arwbqcqbjs" path="res://assets/moon.png" id="3_ua14v"]
+[ext_resource type="Texture2D" uid="uid://w5o0fifu5qos" path="res://assets/bg_far_stars_wide.png" id="4_ancck"]
+[ext_resource type="Texture2D" uid="uid://ctpiqmwr0ab67" path="res://assets/pipe_bottom.png" id="9_q7xn7"]
+[ext_resource type="Script" uid="uid://djo5yv7s5wrba" path="res://PipeScript.gd" id="10_f1kj6"]
+[ext_resource type="Texture2D" uid="uid://txkfg0eurigv" path="res://assets/pipe_top.png" id="11_2u0e8"]
+[ext_resource type="Texture2D" uid="uid://nqaxqm2c78dc" path="res://assets/bird_wings_in.png" id="11_y6t6f"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2u0e8"]
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yr71d"]
+radius = 82.0
+height = 770.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t0u1a"]
+radius = 46.462925
 
 [node name="TemplateBird" type="Node2D" unique_id=146589811]
+script = ExtResource("1_y6t6f")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=85864674]
+
+[node name="Label" type="Label" parent="HUD" unique_id=942118391]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "0"
+label_settings = SubResource("LabelSettings_2u0e8")
+vertical_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1411548342]
+script = ExtResource("1_ancck")
 
-[node name="Bird" type="Sprite2D" parent="." unique_id=1992971117]
+[node name="BackgroundBack" type="Parallax2D" parent="." unique_id=1874465596]
+z_index = 1
+repeat_size = Vector2(1085, 0)
+autoscroll = Vector2(-100, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundBack" unique_id=257345602]
+position = Vector2(624, -9.536743e-07)
+scale = Vector2(1.8836806, 1.4589844)
+texture = ExtResource("1_pi3y5")
+
+[node name="BackgroundFront" type="Parallax2D" parent="." unique_id=216738140]
+z_index = 1
+repeat_size = Vector2(1085, 0)
+autoscroll = Vector2(-50, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundFront" unique_id=343398389]
+position = Vector2(624, 6.0000005)
+scale = Vector2(1.8836806, 1.4589844)
+texture = ExtResource("2_mny0g")
+
+[node name="BackgroundFront2" type="Parallax2D" parent="." unique_id=993487700]
+z_index = 1
+repeat_size = Vector2(17280, 0)
+autoscroll = Vector2(-10, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundFront2" unique_id=1036150900]
+position = Vector2(624, 6.0000005)
+scale = Vector2(1.8836806, 1.4589844)
+texture = ExtResource("4_ancck")
+
+[node name="BackgroundBack2" type="Parallax2D" parent="." unique_id=1593719635]
+z_index = 1
+repeat_size = Vector2(1085, 0)
+autoscroll = Vector2(-100, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundBack2" unique_id=35108125]
+position = Vector2(624, 5)
+scale = Vector2(1.8836806, 1.4589844)
+texture = ExtResource("1_pi3y5")
+
+[node name="Pipes" type="Node2D" parent="." unique_id=1996170779]
+z_index = 3
+y_sort_enabled = true
+script = ExtResource("10_f1kj6")
+
+[node name="PipeUp" type="Area2D" parent="Pipes" unique_id=1314988711]
+position = Vector2(1398, 808)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipes/PipeUp" unique_id=1837977450]
+shape = SubResource("CapsuleShape2D_yr71d")
+
+[node name="Sprite2D" type="Sprite2D" parent="Pipes/PipeUp" unique_id=1192381665]
+texture = ExtResource("9_q7xn7")
+
+[node name="PipeDown" type="Area2D" parent="Pipes" unique_id=923405592]
+position = Vector2(1398, -161)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipes/PipeDown" unique_id=586322564]
+shape = SubResource("CapsuleShape2D_yr71d")
+
+[node name="Sprite2D" type="Sprite2D" parent="Pipes/PipeDown" unique_id=1036738588]
+texture = ExtResource("11_2u0e8")
+
+[node name="FrontgroundFront" type="Parallax2D" parent="." unique_id=1723577745]
+z_index = 4
+repeat_size = Vector2(500, 0)
+autoscroll = Vector2(-300, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="FrontgroundFront" unique_id=386156353]
+position = Vector2(595, 310.00006)
+scale = Vector2(1.8836806, 1.4589844)
+texture = ExtResource("3_pi3y5")
+
+[node name="Moon" type="Parallax2D" parent="." unique_id=2104968992]
+z_index = 2
+repeat_size = Vector2(10850, 0)
+autoscroll = Vector2(-10, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Moon" unique_id=383835765]
+position = Vector2(1003, -193.99998)
+scale = Vector2(1.5509312, 1.5249468)
+texture = ExtResource("3_ua14v")
+
+[node name="Bird" type="CharacterBody2D" parent="." unique_id=1176960088]
+z_index = 3
 position = Vector2(-451, -0.9999999)
 scale = Vector2(0.6041667, 0.6041667)
-texture = ExtResource("1_ko5ue")
 script = ExtResource("2_ko5ue")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="Bird" unique_id=23184791]
 rect = Rect2(-54.620667, -33.10345, 81.103455, 72.82759)
 
-[connection signal="screen_exited" from="Bird/VisibleOnScreenEnabler2D" to="Bird" method="_on_visible_on_screen_enabler_2d_screen_exited"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bird" unique_id=33250368]
+position = Vector2(-9.931035, -1.9731193e-07)
+shape = SubResource("CircleShape2D_t0u1a")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bird" unique_id=1416126002]
+texture = ExtResource("11_y6t6f")
+
+[connection signal="body_entered" from="Pipes/PipeUp" to="Pipes" method="_on_pipe_up_body_entered"]
+[connection signal="body_entered" from="Pipes/PipeDown" to="Pipes" method="_on_pipe_down_body_entered"]
