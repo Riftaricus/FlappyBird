@@ -29,12 +29,43 @@ script = ExtResource("1_y6t6f")
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=85864674]
 
+[node name="ColorRect" type="ColorRect" parent="HUD" unique_id=2089894062]
+offset_left = 1045.0
+offset_right = 1152.0
+offset_bottom = 45.0
+color = Color(0.4149491, 0.03763828, 0.4149491, 1)
+
 [node name="Label" type="Label" parent="HUD" unique_id=942118391]
-offset_right = 40.0
+offset_left = 1109.0
+offset_right = 1149.0
 offset_bottom = 23.0
 text = "0"
 label_settings = SubResource("LabelSettings_2u0e8")
+horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="highScore" type="Label" parent="HUD" unique_id=160135965]
+offset_left = 1109.0
+offset_top = 18.0
+offset_right = 1149.0
+offset_bottom = 41.0
+text = "0"
+label_settings = SubResource("LabelSettings_2u0e8")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="HUD" unique_id=100984305]
+offset_left = 1083.0
+offset_right = 1126.0
+offset_bottom = 23.0
+text = "Score"
+
+[node name="Label3" type="Label" parent="HUD" unique_id=939002055]
+offset_left = 1048.0
+offset_top = 18.0
+offset_right = 1126.0
+offset_bottom = 41.0
+text = "Highscore"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1411548342]
 script = ExtResource("1_ancck")
