@@ -1,3 +1,207 @@
 [gd_scene format=3 uid="uid://dygvv6xyexu6j"]
 
+[ext_resource type="Script" uid="uid://djm57m0doafqp" path="res://MainMenuManager.gd" id="1_i26rj"]
+
 [node name="MainMenu" type="Node2D" unique_id=330750186]
+script = ExtResource("1_i26rj")
+
+[node name="Label" type="Label" parent="." unique_id=1706829571]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = 47.0
+offset_right = 1151.0
+offset_bottom = 700.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 1
+text = "FLAPPY BIRD"
+horizontal_alignment = 1
+
+[node name="lvl0" type="ColorRect" parent="." unique_id=139831348]
+offset_left = 123.0
+offset_top = 145.0
+offset_right = 431.0
+offset_bottom = 225.0
+color = Color(0.21512339, 0, 0.0046594236, 1)
+
+[node name="Label" type="Label" parent="lvl0" unique_id=1265336348]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 81.0
+text = "Level 0: The Tutorial"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="lvl0" unique_id=585218894]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 20.0
+offset_right = 288.0
+offset_bottom = 60.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="lvl0/ColorRect" unique_id=695146982]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 40.0
+text = "Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button4" type="Button" parent="lvl0/ColorRect" unique_id=1234346385]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 40.0
+
+[node name="lvl1" type="ColorRect" parent="." unique_id=746822177]
+offset_left = 437.0
+offset_top = 145.0
+offset_right = 745.0
+offset_bottom = 225.0
+color = Color(0.21512339, 0, 0.0046594236, 1)
+
+[node name="Label" type="Label" parent="lvl1" unique_id=469341668]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 81.0
+text = "Level 1: ???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="lvl1" unique_id=1321076705]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 20.0
+offset_right = 288.0
+offset_bottom = 60.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="lvl1/ColorRect" unique_id=1704549101]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 40.0
+text = "Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button3" type="Button" parent="lvl1/ColorRect" unique_id=1696222746]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 40.0
+
+[node name="lvl2" type="ColorRect" parent="." unique_id=661184597]
+offset_left = 751.0
+offset_top = 145.0
+offset_right = 1059.0
+offset_bottom = 225.0
+color = Color(0.21512339, 0, 0.0046594236, 1)
+
+[node name="Label" type="Label" parent="lvl2" unique_id=1853592102]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 81.0
+text = "Level 2: ???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="lvl2" unique_id=2082851979]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 20.0
+offset_right = 288.0
+offset_bottom = 60.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="lvl2/ColorRect" unique_id=203150547]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 40.0
+text = "Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button3" type="Button" parent="lvl2/ColorRect" unique_id=1704313594]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 40.0
+
+[node name="lvl3" type="ColorRect" parent="." unique_id=1309442181]
+offset_left = 288.0
+offset_top = 240.0
+offset_right = 596.0
+offset_bottom = 320.0
+color = Color(0.21512339, 0, 0.0046594236, 1)
+
+[node name="Label" type="Label" parent="lvl3" unique_id=487124969]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 81.0
+text = "Level 3: ???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="lvl3" unique_id=1180878433]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 20.0
+offset_right = 288.0
+offset_bottom = 60.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="lvl3/ColorRect" unique_id=1687863518]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 40.0
+text = "Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="lvl3/ColorRect" unique_id=945225873]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 40.0
+
+[node name="lvl4" type="ColorRect" parent="." unique_id=1920571172]
+offset_left = 602.0
+offset_top = 240.0
+offset_right = 910.0
+offset_bottom = 320.0
+color = Color(0.21512339, 0, 0.0046594236, 1)
+
+[node name="Label" type="Label" parent="lvl4" unique_id=1375922795]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 81.0
+text = "Level 4: ???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="lvl4" unique_id=735349764]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 20.0
+offset_right = 288.0
+offset_bottom = 60.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="lvl4/ColorRect" unique_id=58190554]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 40.0
+text = "Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="lvl4/ColorRect" unique_id=471075522]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 40.0
+
+[connection signal="button_down" from="lvl0/ColorRect/Button4" to="." method="_on_lvl0_press"]
+[connection signal="button_down" from="lvl1/ColorRect/Button3" to="." method="_on_lvl1_press"]
+[connection signal="button_down" from="lvl2/ColorRect/Button3" to="." method="_on_lvl2_press"]
+[connection signal="button_down" from="lvl3/ColorRect/Button" to="." method="_on_lvl3_press"]
+[connection signal="button_down" from="lvl4/ColorRect/Button2" to="." method="_on_lvl4_press"]
