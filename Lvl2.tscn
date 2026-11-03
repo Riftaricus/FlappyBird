@@ -2,16 +2,18 @@
 
 [ext_resource type="Script" uid="uid://jcf2o2t22ia0" path="res://HudManager.gd" id="1_xr701"]
 [ext_resource type="Script" uid="uid://ihmiik3yaavq" path="res://CameraFx.gd" id="2_mf2w0"]
-[ext_resource type="Texture2D" uid="uid://b6nd5f3igxj2v" path="res://assets/bg_far_mountains.png" id="3_buwui"]
-[ext_resource type="Texture2D" uid="uid://jwbmnisswtaj" path="res://assets/bg_far_sky.png" id="4_3nred"]
-[ext_resource type="Texture2D" uid="uid://w5o0fifu5qos" path="res://assets/bg_far_stars_wide.png" id="5_myin2"]
+[ext_resource type="Texture2D" uid="uid://c0hn3f7mjqnnv" path="res://assets/lvl2_bg_city.png" id="3_buwui"]
+[ext_resource type="Texture2D" uid="uid://8pj610q757xg" path="res://assets/lvl2_bg_hills.png" id="4_3nred"]
+[ext_resource type="Texture2D" uid="uid://b5w1p0tagaryj" path="res://assets/lvl2_bg_clouds_wide.png" id="5_myin2"]
 [ext_resource type="Script" uid="uid://djo5yv7s5wrba" path="res://PipeScript.gd" id="6_6l0dn"]
-[ext_resource type="Texture2D" uid="uid://ctpiqmwr0ab67" path="res://assets/pipe_bottom.png" id="7_83jtn"]
-[ext_resource type="Texture2D" uid="uid://txkfg0eurigv" path="res://assets/pipe_top.png" id="8_j88pp"]
-[ext_resource type="Texture2D" uid="uid://tmvqapr3kqti" path="res://assets/ground.png" id="9_loe4l"]
-[ext_resource type="Texture2D" uid="uid://b21arwbqcqbjs" path="res://assets/moon.png" id="10_genxa"]
-[ext_resource type="Script" uid="uid://deufn15bwnhvj" path="res://BirdGravity.gd" id="11_wmrac"]
-[ext_resource type="Texture2D" uid="uid://nqaxqm2c78dc" path="res://assets/bird_wings_in.png" id="12_q752g"]
+[ext_resource type="Texture2D" uid="uid://ohyavrxa5ptm" path="res://assets/lvl2_pipe_bottom.png" id="7_83jtn"]
+[ext_resource type="Texture2D" uid="uid://cvd30eyb2vqw8" path="res://assets/lvl2_pipe_top.png" id="8_j88pp"]
+[ext_resource type="Texture2D" uid="uid://bsfbb1uf5pefl" path="res://assets/lvl2_ground.png" id="9_loe4l"]
+[ext_resource type="Texture2D" uid="uid://d33abwhyaneqo" path="res://assets/lvl2_sun.png" id="10_genxa"]
+[ext_resource type="Script" uid="uid://dpeyw6nurkbtb" path="res://BirdGravityLvl2.gd" id="11_wmrac"]
+[ext_resource type="Texture2D" uid="uid://rogngwjt03k4" path="res://assets/lvl2_bird_wings_in.png" id="12_q752g"]
+[ext_resource type="Texture2D" uid="uid://b74d37trc4yde" path="res://assets/lvl2_bg_sky.png" id="13_sky"]
+[ext_resource type="Script" uid="uid://bhq38a3axtdmf" path="res://Lvl2Twist.gd" id="14_twist"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2u0e8"]
 outline_size = 2
@@ -71,16 +73,19 @@ text = "Highscore"
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1411548342]
 script = ExtResource("2_mf2w0")
 
-[node name="BackgroundBack" type="Parallax2D" parent="." unique_id=1874465596]
-z_index = 1
-repeat_size = Vector2(1085, 0)
-autoscroll = Vector2(-100, 0)
-repeat_times = 3
+[node name="SkyLayer" type="CanvasLayer" parent="." unique_id=1000000002]
+layer = -10
 
-[node name="Sprite2D" type="Sprite2D" parent="BackgroundBack" unique_id=257345602]
-position = Vector2(624, -9.536743e-07)
-scale = Vector2(1.8836806, 1.4589844)
-texture = ExtResource("3_buwui")
+[node name="Sky" type="TextureRect" parent="SkyLayer" unique_id=1000000003]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -49.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_sky")
+expand_mode = 1
 
 [node name="BackgroundFront" type="Parallax2D" parent="." unique_id=216738140]
 z_index = 1
@@ -95,7 +100,7 @@ texture = ExtResource("4_3nred")
 
 [node name="BackgroundFront2" type="Parallax2D" parent="." unique_id=993487700]
 z_index = 1
-repeat_size = Vector2(17280, 0)
+repeat_size = Vector2(15431, 0)
 autoscroll = Vector2(-10, 0)
 repeat_times = 3
 
@@ -175,6 +180,9 @@ shape = SubResource("CircleShape2D_t0u1a")
 
 [node name="Sprite2D" type="Sprite2D" parent="Bird" unique_id=1416126002]
 texture = ExtResource("12_q752g")
+
+[node name="Lvl2Twist" type="Node" parent="." unique_id=1000000001]
+script = ExtResource("14_twist")
 
 [connection signal="body_entered" from="Pipes/PipeUp" to="Pipes" method="_on_pipe_up_body_entered"]
 [connection signal="body_entered" from="Pipes/PipeDown" to="Pipes" method="_on_pipe_down_body_entered"]
