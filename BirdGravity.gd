@@ -50,4 +50,4 @@ func die() -> void:
 	if not alive:
 		return
 	alive = false
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://MainMenu.tscn")
