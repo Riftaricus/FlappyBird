@@ -17,7 +17,7 @@ offset_bottom = 700.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 1
-text = "FLAPPY BIRD"
+text = "FLOPPY BIRD"
 horizontal_alignment = 1
 
 [node name="lvl0" type="ColorRect" parent="." unique_id=139831348]
