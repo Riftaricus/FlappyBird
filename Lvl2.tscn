@@ -27,6 +27,7 @@ height = 770.0
 radius = 46.462925
 
 [node name="TemplateBird" type="Node2D" unique_id=146589811]
+visible = false
 script = ExtResource("1_xr701")
 LEVEL_NAME = "lvl2"
 
@@ -35,7 +36,7 @@ LEVEL_NAME = "lvl2"
 [node name="ColorRect" type="ColorRect" parent="HUD" unique_id=2089894062]
 offset_left = 1045.0
 offset_right = 1152.0
-offset_bottom = 45.0
+offset_bottom = 23.0
 color = Color(0.4149491, 0.03763828, 0.4149491, 1)
 
 [node name="Label" type="Label" parent="HUD" unique_id=942118391]
@@ -48,6 +49,7 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="highScore" type="Label" parent="HUD" unique_id=160135965]
+visible = false
 offset_left = 1109.0
 offset_top = 18.0
 offset_right = 1149.0
@@ -64,6 +66,7 @@ offset_bottom = 23.0
 text = "Score"
 
 [node name="Label3" type="Label" parent="HUD" unique_id=939002055]
+visible = false
 offset_left = 1048.0
 offset_top = 18.0
 offset_right = 1126.0
