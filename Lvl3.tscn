@@ -157,7 +157,7 @@ texture = ExtResource("8_r1ugq")
 [node name="FrontgroundFront" type="Parallax2D" parent="." unique_id=1723577745]
 z_index = 4
 repeat_size = Vector2(500, 0)
-autoscroll = Vector2(-300, 0)
+autoscroll = Vector2(-450, 0)
 repeat_times = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="FrontgroundFront" unique_id=386156353]
