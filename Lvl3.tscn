@@ -168,7 +168,7 @@ texture = ExtResource("10_6fa5c")
 [node name="Moon" type="Parallax2D" parent="." unique_id=2104968992]
 z_index = 2
 repeat_size = Vector2(10850, 0)
-autoscroll = Vector2(-10, 0)
+autoscroll = Vector2(-100, 0)
 repeat_times = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Moon" unique_id=383835765]
