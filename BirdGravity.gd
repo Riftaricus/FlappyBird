@@ -7,9 +7,6 @@ const FLAP_TIME := 0.15
 const GRAVITY := 900.0
 const FLAP_FORCE := -300.0
 
-var last_press = 0
-var will_press = false
-
 @onready var sprite: Sprite2D = $Sprite2D
 
 var alive := true
@@ -25,24 +22,11 @@ func _physics_process(delta: float) -> void:
 
 	velocity.y += GRAVITY * delta
 
-	last_press -= 1
+	if Input.is_action_just_pressed("Jump"):
+		velocity.y = FLAP_FORCE
+		flap()
 
-	if Input.is_action_pressed("Jump") || (!last_press > 0 && will_press):
-		
-		
-		if last_press < 0:
-			velocity.y = FLAP_FORCE
-			flap()
-			last_press = 15
-		elif last_press > 0 && will_press == false:
-			will_press = true
-		else:
-			flap()
-			velocity.y = FLAP_FORCE
-			will_press = false
 	move_and_slide()
-
-
 
 func flap() -> void:
 	flap_id += 1
