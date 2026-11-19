@@ -9,13 +9,13 @@ extends Node
 
 const FLAK_EVERY := 1
 const SHAKE_TIME := 0.8
-const SPEED_UP := 20.0
-const MAX_SPEED := 650.0
+const SPEED_UP := 25.0
+const MAX_SPEED := 850.0
 const FLAK_TEX := preload("res://assets/lvl2_flak_puff.png")
 
 const CUTSCENE_AFTER := 25.0   # seconden spelen voor de cutscene start
 const FRAME_COUNT := 6         # frame1.png t/m frame6.png
-const FRAME_TIME := 0.5        # seconden per frame (pas dit aan)
+const FRAME_TIME := 0.3        # seconden per frame
 const END_IMAGE := "res://assets/plankton.jpg"
 const END_IMAGE_TIME := 3.0
 const MAIN_MENU := "res://MainMenu.tscn"
