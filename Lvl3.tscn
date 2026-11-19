@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://ihmiik3yaavq" path="res://CameraFx.gd" id="2_r1ugq"]
 [ext_resource type="Texture2D" uid="uid://cqlfwkvwbp4ap" path="res://assets/lvl3/bg_far_mountains.png" id="3_r1ugq"]
 [ext_resource type="Texture2D" uid="uid://xj6fw55cq6v4" path="res://assets/lvl3/bg_far_sky.png" id="4_r1ugq"]
-[ext_resource type="Texture2D" uid="uid://bmbuxpgpg5vyn" path="res://assets/lvl3/bg_far_stars_wide.png" id="5_1rpaj"]
 [ext_resource type="Texture2D" uid="uid://c0a28h27qg7gi" path="res://assets/lvl3/falling_ash.png" id="5_6fa5c"]
 [ext_resource type="Texture2D" uid="uid://3xhxxi7mds7v" path="res://assets/lvl3/bg_near_tileable.png" id="6_1rpaj"]
 [ext_resource type="Script" uid="uid://djo5yv7s5wrba" path="res://PipeScript.gd" id="6_fufhl"]
@@ -116,7 +115,6 @@ repeat_times = 3
 z_index = -1
 position = Vector2(624, 6.0000005)
 scale = Vector2(1.8836806, 1.4589844)
-texture = ExtResource("5_1rpaj")
 
 [node name="BackgroundBack2" type="Parallax2D" parent="." unique_id=1593719635]
 z_index = 1
