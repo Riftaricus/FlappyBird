@@ -1,0 +1,253 @@
+[gd_scene format=3 uid="uid://dlr10e0t4m7xg"]
+
+[ext_resource type="Script" uid="uid://jcf2o2t22ia0" path="res://scripts/HudManager.gd" id="1_8ojgj"]
+[ext_resource type="Script" uid="uid://ihmiik3yaavq" path="res://scripts/CameraFx.gd" id="2_2wijm"]
+[ext_resource type="Texture2D" uid="uid://dr1lwtgvny8x" path="res://assets/lvl4/bg_far_sky.png" id="3_sky"]
+[ext_resource type="Texture2D" uid="uid://4iadcb1e1bce" path="res://assets/lvl4/bg_far_stars.png" id="5_stars"]
+[ext_resource type="Texture2D" uid="uid://bhtp1yuy0bhjr" path="res://assets/lvl4/bg_far_clouds_far.png" id="6_clouds_far"]
+[ext_resource type="Texture2D" uid="uid://cts13kef7eelf" path="res://assets/lvl4/bg_far_clouds_near.png" id="7_clouds_near"]
+[ext_resource type="Texture2D" uid="uid://bmw21j0hpfxje" path="res://assets/lvl4/bg_far_rlyeh.png" id="8_rlyeh"]
+[ext_resource type="Texture2D" uid="uid://bgdjpkwdv2dgx" path="res://assets/lvl4/bg_ocean_1_far.png" id="10_ocean_far"]
+[ext_resource type="Texture2D" uid="uid://br1miw6ha04ff" path="res://assets/lvl4/bg_ocean_2_mid.png" id="11_ocean_mid"]
+[ext_resource type="Texture2D" uid="uid://32k70fu0xorc" path="res://assets/lvl4/bg_ocean_3_near.png" id="12_ocean_near"]
+[ext_resource type="Texture2D" uid="uid://nqaxqm2c78dc" path="res://assets/bird_wings_in.png" id="12_q2lmm"]
+[ext_resource type="Texture2D" uid="uid://k55h4xliut6i" path="res://assets/lvl4/bg_ocean_4_swell_a.png" id="13_ocean_swell_a"]
+[ext_resource type="Script" uid="uid://cfca2xndwk5ss" path="res://scripts/lvl4/PipeScriptLvl4.gd" id="14_7bb3u"]
+[ext_resource type="Texture2D" uid="uid://c4tsp2lyg20ho" path="res://assets/lvl4/bg_ocean_5_swell_b.png" id="14_ocean_swell_b"]
+[ext_resource type="Script" uid="uid://bc4n1nhhjru64" path="res://scripts/lvl4/BirdGravitylvl4.gd" id="15_7bb3u"]
+[ext_resource type="Texture2D" uid="uid://dryd20df2dynm" path="res://assets/lvl4/tentacle_bottom_3.png" id="15_dfh4a"]
+[ext_resource type="Texture2D" uid="uid://dw2ie38wavw2q" path="res://assets/lvl4/tentacle_top_1.png" id="15_wqnca"]
+[ext_resource type="Texture2D" uid="uid://uf3rlc663kd8" path="res://assets/lvl4/moon.png" id="17_moon"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2u0e8"]
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yr71d"]
+radius = 82.0
+height = 770.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t0u1a"]
+radius = 46.462925
+
+[node name="TemplateBird" type="Node2D" unique_id=146589811]
+script = ExtResource("1_8ojgj")
+LEVEL_NAME = "lvl4"
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=85864674]
+
+[node name="ColorRect" type="ColorRect" parent="HUD" unique_id=2089894062]
+offset_left = 1045.0
+offset_right = 1152.0
+offset_bottom = 45.0
+color = Color(0.4149491, 0.03763828, 0.4149491, 1)
+
+[node name="Label" type="Label" parent="HUD" unique_id=942118391]
+offset_left = 1109.0
+offset_right = 1149.0
+offset_bottom = 23.0
+text = "0"
+label_settings = SubResource("LabelSettings_2u0e8")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="highScore" type="Label" parent="HUD" unique_id=160135965]
+offset_left = 1109.0
+offset_top = 18.0
+offset_right = 1149.0
+offset_bottom = 41.0
+text = "0"
+label_settings = SubResource("LabelSettings_2u0e8")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="HUD" unique_id=100984305]
+offset_left = 1083.0
+offset_right = 1126.0
+offset_bottom = 23.0
+text = "Score"
+
+[node name="Label3" type="Label" parent="HUD" unique_id=939002055]
+offset_left = 1048.0
+offset_top = 18.0
+offset_right = 1126.0
+offset_bottom = 41.0
+text = "Highscore"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1411548342]
+offset = Vector2(0, 80)
+script = ExtResource("2_2wijm")
+
+[node name="BackgroundSky" type="Parallax2D" parent="." unique_id=745945215]
+z_index = -10
+repeat_size = Vector2(1085, 0)
+autoscroll = Vector2(-5, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundSky" unique_id=1104022692]
+position = Vector2(624, 0)
+scale = Vector2(1.8836806, 1.4589844)
+texture = ExtResource("3_sky")
+
+[node name="StarsWide" type="Parallax2D" parent="." unique_id=611703254]
+z_index = -9
+repeat_size = Vector2(17280, 0)
+autoscroll = Vector2(-8, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="StarsWide" unique_id=1599808671]
+position = Vector2(8640, 0)
+scale = Vector2(1, 1.4589844)
+
+[node name="Stars" type="Parallax2D" parent="." unique_id=785841337]
+z_index = -8
+repeat_size = Vector2(1085, 0)
+autoscroll = Vector2(-12, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Stars" unique_id=1429542911]
+position = Vector2(624, 0)
+scale = Vector2(1.8836806, 1.4589844)
+texture = ExtResource("5_stars")
+
+[node name="CloudsFar" type="Parallax2D" parent="." unique_id=118409569]
+z_index = -7
+repeat_size = Vector2(1085, 0)
+autoscroll = Vector2(-16, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="CloudsFar" unique_id=1661209805]
+position = Vector2(624, 0)
+scale = Vector2(1.8836806, 1.4589844)
+texture = ExtResource("6_clouds_far")
+
+[node name="CloudsNear" type="Parallax2D" parent="." unique_id=313765008]
+z_index = -6
+repeat_size = Vector2(1085, 0)
+autoscroll = Vector2(-30, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="CloudsNear" unique_id=71504125]
+position = Vector2(624, 0)
+scale = Vector2(1.8836806, 1.4589844)
+texture = ExtResource("7_clouds_near")
+
+[node name="Moon" type="Parallax2D" parent="." unique_id=1213100137]
+z_index = -5
+repeat_size = Vector2(10850, 0)
+autoscroll = Vector2(-10, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Moon" unique_id=1592955325]
+position = Vector2(1000, -200)
+scale = Vector2(1.5509312, 1.5249468)
+texture = ExtResource("17_moon")
+
+[node name="DistantCity" type="Parallax2D" parent="." unique_id=1918862171]
+z_index = -4
+repeat_size = Vector2(1085, 0)
+autoscroll = Vector2(-24, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="DistantCity" unique_id=85758124]
+position = Vector2(624, 0)
+scale = Vector2(1.8836806, 1.4589844)
+texture = ExtResource("8_rlyeh")
+
+[node name="OceanFar" type="Parallax2D" parent="." unique_id=109362710]
+z_index = -3
+repeat_size = Vector2(1085, 0)
+autoscroll = Vector2(-24, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="OceanFar" unique_id=117184660]
+position = Vector2(624, 0)
+scale = Vector2(1.8836806, 1.4589844)
+texture = ExtResource("10_ocean_far")
+
+[node name="OceanMid" type="Parallax2D" parent="." unique_id=146875952]
+z_index = -2
+repeat_size = Vector2(1085, 0)
+autoscroll = Vector2(-42, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="OceanMid" unique_id=1606015580]
+position = Vector2(624, 44)
+scale = Vector2(1.8836806, 1.4589844)
+texture = ExtResource("11_ocean_mid")
+
+[node name="OceanNear" type="Parallax2D" parent="." unique_id=860753861]
+z_index = -1
+repeat_size = Vector2(1085, 0)
+autoscroll = Vector2(-65, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="OceanNear" unique_id=978718486]
+position = Vector2(624, 88)
+scale = Vector2(1.8836806, 1.4589844)
+texture = ExtResource("12_ocean_near")
+
+[node name="OceanSwellA" type="Parallax2D" parent="." unique_id=1260044293]
+repeat_size = Vector2(1085, 0)
+autoscroll = Vector2(-90, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="OceanSwellA" unique_id=315853870]
+position = Vector2(624, 132)
+scale = Vector2(1.8836806, 1.4589844)
+texture = ExtResource("13_ocean_swell_a")
+
+[node name="OceanSwellB" type="Parallax2D" parent="." unique_id=549768022]
+z_index = 1
+repeat_size = Vector2(1085, 0)
+autoscroll = Vector2(-115, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="OceanSwellB" unique_id=53620409]
+position = Vector2(624, 176)
+scale = Vector2(1.8836806, 1.4589844)
+texture = ExtResource("14_ocean_swell_b")
+
+[node name="Pipes" type="Node2D" parent="." unique_id=2016387830]
+z_index = 3
+y_sort_enabled = true
+script = ExtResource("14_7bb3u")
+
+[node name="PipeUp" type="Area2D" parent="Pipes" unique_id=1261408923]
+position = Vector2(1398, 808)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipes/PipeUp" unique_id=1802390587]
+shape = SubResource("CapsuleShape2D_yr71d")
+
+[node name="Tentacle" type="Sprite2D" parent="Pipes/PipeUp" unique_id=887382624]
+z_index = 1
+texture = ExtResource("15_dfh4a")
+
+[node name="PipeDown" type="Area2D" parent="Pipes" unique_id=404564273]
+position = Vector2(1398, -161)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipes/PipeDown" unique_id=1738245077]
+shape = SubResource("CapsuleShape2D_yr71d")
+
+[node name="Tentacle" type="Sprite2D" parent="Pipes/PipeDown" unique_id=1793618091]
+z_index = 1
+texture = ExtResource("15_wqnca")
+
+[node name="Bird" type="CharacterBody2D" parent="." unique_id=1176960088]
+z_index = 3
+position = Vector2(-451, -0.9999999)
+scale = Vector2(0.6041667, 0.6041667)
+script = ExtResource("15_7bb3u")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="Bird" unique_id=23184791]
+rect = Rect2(-54.620667, -33.10345, 81.103455, 72.82759)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bird" unique_id=33250368]
+position = Vector2(-9.931035, -1.9731193e-07)
+shape = SubResource("CircleShape2D_t0u1a")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bird" unique_id=1416126002]
+texture = ExtResource("12_q2lmm")
+
+[connection signal="body_entered" from="Pipes/PipeUp" to="Pipes" method="_on_pipe_up_body_entered"]
+[connection signal="body_entered" from="Pipes/PipeDown" to="Pipes" method="_on_pipe_down_body_entered"]
