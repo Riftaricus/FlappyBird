@@ -14,8 +14,7 @@ var flap_id := 0
 
 func _process(delta: float) -> void:
 	if position.y < -300 or position.y > 300:
-		# die()
-		print("ded")
+		die()
 
 func _physics_process(delta: float) -> void:
 	if not alive:
