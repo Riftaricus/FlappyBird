@@ -18,7 +18,7 @@ const FRAME_COUNT := 6         # frame1.png t/m frame6.png
 const FRAME_TIME := 0.3        # seconden per frame
 const END_IMAGE := "res://assets/plankton.jpg"
 const END_IMAGE_TIME := 3.0
-const MAIN_MENU := "res://scenes/ui/MainMenu.tscn"
+const MAIN_MENU := "res://scenes/MainMenu.tscn"
 
 # HudManager begint ook op -3 (de eerste pijpen spawnen buiten beeld)
 var pipes_passed := -1
